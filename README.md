@@ -8,7 +8,7 @@ Makes Everyone on a Server say Whatever You Want in PocketMine-MP
 # Commands and Permissions
 ```/everyonesaywhat``` and ```/esw```
 
-```everyonesaywhat.use``` accessible to op (default: op) - Permission to use the commands.
+```everyonesaywhat.use``` accessible to op (default: op) - Permission to use the commands. \
 ```everyonesaywhat.deny``` accessible to op (default: op) - Permission to overwrite the commands.
 
 # How to Install
