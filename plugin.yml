@@ -1,0 +1,17 @@
+name: EveryoneSayWhat
+main: CraftCamp\EveryoneSayWhat\Main
+api: [4.0.0]
+version: 1.0.0
+author: CraftCamp
+
+commands:
+  everyonesaywhat:
+    description: ""
+    permission: everyonesaywhat.use
+    aliases: ['esw']
+
+permissions:
+  everyonesaywhat.use:
+    default: op
+  everyonesaywhat.deny:
+    default: op  
