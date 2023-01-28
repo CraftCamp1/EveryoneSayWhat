@@ -42,11 +42,11 @@ class Main extends PluginBase {
     }
 
     private function logCommand(CommandSender $sender, string $message): void {
-        $name = $sender instanceof Player ? $sender->getName() : "Console";
-        $this->getServer()->getLogger()->info("[$name] Used ESW: $message");
-        foreach($this->getServer()->getOnlinePlayers() as $player){
-            if($player->hasPermission("everyonesaywhat.use") && !$sender->hasPermission("everyonesaywhat.use") || $sender instanceof ConsoleCommandSender){
-                $player->sendMessage("[$name] Used ESW: $message");
+    $name = $sender instanceof Player ? $sender->getName() : "Console";
+    $this->getServer()->getLogger()->info("[$name] Used ESW: $message");
+    foreach($this->getServer()->getOnlinePlayers() as $player){
+        if($player->hasPermission("everyonesaywhat.use") && $sender instanceof Player || $sender instanceof ConsoleCommandSender){
+            $player->sendMessage("[$name] Used ESW: $message");            
             }
         }
     }
