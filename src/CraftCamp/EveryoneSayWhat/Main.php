@@ -4,6 +4,7 @@ namespace CraftCamp\EveryoneSayWhat;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
+use pocketmine\console\ConsoleCommandSender;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\Server;
@@ -25,6 +26,8 @@ class Main extends PluginBase {
         }
         if ($count === 0) {
             $sender->sendMessage("No players to execute command on");
+        } else {
+            $this->logCommand($sender, $message);
         }
         return true;
     }
