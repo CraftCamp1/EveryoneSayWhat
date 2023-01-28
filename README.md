@@ -2,8 +2,8 @@
 Makes Everyone on a Server say Whatever You Want in PocketMine-MP
 
 # Features
-- Allows specific players to run/overwrite the command
-- Ability to troll entire servers
+- Allows specific players to run/overwrite the command.
+- Ability to make an entire server say any message you want.
 
 # Commands and Permissions
 ```/everyonesaywhat``` and ```/esw```
