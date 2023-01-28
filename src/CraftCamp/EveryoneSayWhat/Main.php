@@ -29,24 +29,29 @@ class Main extends PluginBase {
         }
         return true;
     }
-    private function checkCommand(CommandSender $sender, array $args): bool {
-        if (empty($args)) {
-            $sender->sendMessage("Please provide a message to be broadcasted");
-            return false;
+        private function checkCommand(CommandSender $sender, array $args): bool {
+            if (empty($args)) {
+                $sender->sendMessage("Please provide a message to be broadcasted");
+                return false;
+            }
+            if (empty($this->getServer()->getOnlinePlayers())) {
+                $sender->sendMessage("No players to execute command on");
+                return false;
+            }
+            return true;
         }
-        if (empty($this->getServer()->getOnlinePlayers())) {
-            $sender->sendMessage("No players to execute command on");
-            return false;
-        }
-        return true;
-    }
 
-    private function logCommand(CommandSender $sender, string $message): void {
-    $name = $sender instanceof Player ? $sender->getName() : "Console";
-    $this->getServer()->getLogger()->info("[$name] Used ESW: $message");
-    foreach($this->getServer()->getOnlinePlayers() as $player){
-        if($player->hasPermission("everyonesaywhat.use") && $sender instanceof Player || $sender instanceof ConsoleCommandSender){
-            $player->sendMessage("[$name] Used ESW: $message");            
+        private function logCommand(CommandSender $sender, string $message): void {
+        $name = $sender instanceof Player ? $sender->getName() : "Console";
+        $this->getServer()->getLogger()->info("[$name] Used ESW: $message");
+        foreach($this->getServer()->getOnlinePlayers() as $player){
+            if(
+                (
+                    $player->hasPermission("everyonesaywhat.use") && !$sender->hasPermission("everyonesaywhat.use")
+                ) || 
+                $sender instanceof ConsoleCommandSender
+            ){
+                $player->sendMessage("[$name] Used ESW: $message");
             }
         }
     }
