@@ -5,5 +5,5 @@ branches:
 projects:
   EveryoneSayWhat:
     path: ""
-    icon: ""
+    icon: "icon.png"
 ...
