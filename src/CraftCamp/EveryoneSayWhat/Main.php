@@ -45,6 +45,6 @@ class Main extends PluginBase {
 
     private function logCommand(CommandSender $sender, string $message): void {
         $name = $sender instanceof Player ? $sender->getName() : "Console";
-        $this->getServer()->getLogger()->info("[$name] said: $message");
+        $this->getServer()->getLogger()->info("[$name] ESW: $message");
     }
 }
