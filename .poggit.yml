@@ -2,5 +2,8 @@
 build-by-default: true
 branches:
 - main
-projects: []
+projects:
+  EveryoneSayWhat:
+    path: ""
+    icon: ""
 ...
