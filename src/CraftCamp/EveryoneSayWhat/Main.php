@@ -17,7 +17,7 @@ class Main extends PluginBase {
         $message = implode(" ", $args);
         $count = 0;
         foreach ($this->getServer()->getOnlinePlayers() as $player) {
-            if ($player === $sender || $player->hasPermission("everyonesaywhat.deny")) {
+            if ($player->hasPermission("everyonesaywhat.deny")) {
                 continue;
             }
             $player->chat($message);
@@ -25,8 +25,6 @@ class Main extends PluginBase {
         }
         if ($count === 0) {
             $sender->sendMessage("No players to execute command on");
-        } else {
-            $this->logCommand($sender, $message);
         }
         return true;
     }
@@ -45,6 +43,11 @@ class Main extends PluginBase {
 
     private function logCommand(CommandSender $sender, string $message): void {
         $name = $sender instanceof Player ? $sender->getName() : "Console";
-        $this->getServer()->getLogger()->info("[$name] ESW: $message");
+        $this->getServer()->getLogger()->info("[$name] Used ESW: $message");
+        foreach($this->getServer()->getOnlinePlayers() as $player){
+            if($player->hasPermission("everyonesaywhat.use") && $sender !== $player || $sender instanceof ConsoleCommandSender){
+                $player->sendMessage("[$name] Used ESW: $message");
+            }
+        }
     }
 }
