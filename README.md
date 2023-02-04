@@ -1,4 +1,9 @@
 # EveryoneSayWhat
+![License](https://img.shields.io/github/license/CraftCamp1/EveryoneSayWhat)
+[![](https://poggit.pmmp.io/shield.dl.total/RandomTP)](https://poggit.pmmp.io/p/EveryoneSayWhat)
+[![](https://poggit.pmmp.io/shield.state/RandomTP)](https://poggit.pmmp.io/p/EveryoneSayWhat)
+[![](https://poggit.pmmp.io/shield.api/EveryoneSayWhat)](https://poggit.pmmp.io/p/RandomTP)
+
 Makes Everyone on a Server say Whatever You Want in PocketMine-MP
 
 # Features
